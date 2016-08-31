@@ -1,6 +1,7 @@
 package pl.akademiakodu.kurs2;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -23,11 +24,32 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
     }
 
     @OnClick(R.id.ourButton)
     public void buttonClick(View view){
         Toast.makeText(this, "Nasz przycisk działa", Toast.LENGTH_LONG).show();
     }
+
+
+    private class NewTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            
+            return null;
+        }
+        @Override
+        public void onPostExecute(Void  args) {
+
+        }
+        @Override
+        public void onProgressUpdate(Void ... args){
+
+        }
+
+    }
+
 
 }
