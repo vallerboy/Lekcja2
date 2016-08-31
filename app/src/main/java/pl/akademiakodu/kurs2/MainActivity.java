@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,9 @@ public class MainActivity extends Activity {
 
     @BindView(R.id.textView2)
     public TextView text;
+
+    @BindView(R.id.progressBar)
+    public ProgressBar progressBar;
 
     //TODO to zostało jeszcze do zrobienia
 
@@ -33,10 +37,19 @@ public class MainActivity extends Activity {
     }
 
 
-    private class NewTask extends AsyncTask<Void, Void, Void> {
+    private class NewTask extends AsyncTask<Void, Integer, Void> {
 
         @Override
         protected Void doInBackground(Void... params) {
+
+            for(int i = 0; i <= 20; i++) {
+                publishProgress(i);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
 
             return null;
         }
@@ -45,8 +58,8 @@ public class MainActivity extends Activity {
 
         }
         @Override
-        public void onProgressUpdate(Void ... args){
-
+        public void onProgressUpdate(Integer ... args){
+            progressBar.setProgress(args[0]);
         }
 
     }
