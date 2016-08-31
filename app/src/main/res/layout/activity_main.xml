@@ -12,9 +12,15 @@
         android:textSize="50sp"
         android:visibility="visible"
         android:gravity="center_horizontal"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"></TextView>
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Przycisk"
+        android:id="@+id/ourButton"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
