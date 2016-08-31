@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        new NewTask().execute();
     }
 
     @OnClick(R.id.ourButton)
@@ -40,7 +41,7 @@ public class MainActivity extends Activity {
     private class NewTask extends AsyncTask<Void, Integer, Void> {
 
         @Override
-        protected Void doInBackground(Void... params) {
+        protected Void doInBackground(Void ... params) {
 
             for(int i = 0; i <= 20; i++) {
                 publishProgress(i);
@@ -55,7 +56,7 @@ public class MainActivity extends Activity {
         }
         @Override
         public void onPostExecute(Void  args) {
-
+            Toast.makeText(MainActivity.this, "Udało się! Skończyłem", Toast.LENGTH_LONG).show();
         }
         @Override
         public void onProgressUpdate(Integer ... args){
