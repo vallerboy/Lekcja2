@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 
         @Override
         protected Void doInBackground(Void... params) {
-            
+
             return null;
         }
         @Override
