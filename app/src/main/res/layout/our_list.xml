@@ -25,7 +25,19 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textPassword"
+        android:layout_marginBottom="20dp"
         android:layout_below="@+id/textUsername"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/abc_ratingbar_small_material"
+        android:layout_alignTop="@+id/textUsername"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="60dp"
+        android:layout_marginEnd="60dp" />
 </RelativeLayout>

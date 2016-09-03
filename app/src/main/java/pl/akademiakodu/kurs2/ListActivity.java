@@ -2,6 +2,7 @@ package pl.akademiakodu.kurs2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ListActivity extends AppCompatActivity {
 
@@ -25,13 +27,21 @@ public class ListActivity extends AppCompatActivity {
 
         loadFakeUsers();
 
-        listView.setAdapter(new ListAdapter(this, userList));
+        listView.setAdapter(new NewListAdapter(userList, this));
 
+
+    }
+    @OnClick(R.id.addNew)
+    public void addActivity(){
+
+        userList.add(new User("siemanko"));
+        listView.invalidateViews();
+        listView.deferNotifyDataSetChanged();
 
     }
 
     private void loadFakeUsers() {
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i <= 2; i++) {
             userList.add(new User(i + "12w4asd" + i));
         }
     }
