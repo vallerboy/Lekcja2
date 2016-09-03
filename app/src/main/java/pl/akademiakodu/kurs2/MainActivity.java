@@ -35,19 +35,33 @@ public class MainActivity extends Activity {
 
     }
 
+    private Dialog dialog;
+
     @OnClick(R.id.ourButton)
     public void clicked(View v){
-
-         Dialog dialog = new Dialog(this);
+         dialog = new Dialog(this);
+         final Dialog dialog = new Dialog(this);
          dialog.setContentView(R.layout.dialog);
          dialog.setTitle("Witajcie!");
 
-         TextView textLocal = (TextView) findViewById(R.id.textOur);
-         TextView textLocal = (TextView) findViewById(R.id.textOur);
+        // TextView textLocal = (TextView) findViewById(R.id.textOur);
+         TextView textLocal = ButterKnife.findById(dialog, R.id.textOur);
+         Button localButton = ButterKnife.findById(dialog, R.id.dialogButtonOK);
 
-        dialog.show();
+         localButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 dialog.dismiss();
+             }
+         });
+
+         textLocal.setText("AkademiaKodu");
+
+         dialog.show();
 
     }
+
+
 
 
 
