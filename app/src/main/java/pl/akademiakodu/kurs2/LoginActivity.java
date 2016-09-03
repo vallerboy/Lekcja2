@@ -3,10 +3,12 @@ package pl.akademiakodu.kurs2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LoginActivity extends Activity {
 
@@ -21,10 +23,12 @@ public class LoginActivity extends Activity {
         ButterKnife.bind(this);
 
         Intent i = getIntent();
-        if (i.hasExtra("key")) {
-            String response = i.getStringExtra("key");
+        if (i.hasExtra("klucz")) {
+            String response = i.getStringExtra("klucz");
             textView.setText(response);
         }
 
     }
+
+
 }
