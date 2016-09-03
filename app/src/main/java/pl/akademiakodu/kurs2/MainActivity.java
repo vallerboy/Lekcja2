@@ -40,24 +40,7 @@ public class MainActivity extends Activity {
     @OnClick(R.id.ourButton)
     public void clicked(View v){
 
-         final Dialog dialog = new Dialog(this);
-         dialog.setContentView(R.layout.dialog);
-         dialog.setTitle("Witajcie!");
-
-        // TextView textLocal = (TextView) findViewById(R.id.textOur);
-         TextView textLocal = ButterKnife.findById(dialog, R.id.textOur);
-         Button localButton = ButterKnife.findById(dialog, R.id.dialogButtonOK);
-
-         localButton.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 dialog.dismiss();
-             }
-         });
-
-         textLocal.setText("AkademiaKodu");
-
-         dialog.show();
+         startActivity(new Intent(this, ListActivity.class));
 
     }
 
