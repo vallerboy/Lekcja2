@@ -35,11 +35,11 @@ public class MainActivity extends Activity {
 
     }
 
-    private Dialog dialog;
+
 
     @OnClick(R.id.ourButton)
     public void clicked(View v){
-         dialog = new Dialog(this);
+
          final Dialog dialog = new Dialog(this);
          dialog.setContentView(R.layout.dialog);
          dialog.setTitle("Witajcie!");
