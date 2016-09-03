@@ -1,6 +1,8 @@
 package pl.akademiakodu.kurs2;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -35,10 +37,16 @@ public class MainActivity extends Activity {
 
     @OnClick(R.id.ourButton)
     public void clicked(View v){
-        Intent i = new Intent(this, LoginActivity.class);
-        i.putExtra("klucz", "AkademiaKodu jupi!!");
 
-        startActivity(i);
+         Dialog dialog = new Dialog(this);
+         dialog.setContentView(R.layout.dialog);
+         dialog.setTitle("Witajcie!");
+
+         TextView textLocal = (TextView) findViewById(R.id.textOur);
+         TextView textLocal = (TextView) findViewById(R.id.textOur);
+
+        dialog.show();
+
     }
 
 

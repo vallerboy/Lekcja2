@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" ><![CDATA[
-
-
-
-    />
-
-
-
-    ]]>
+    android:layout_height="fill_parent" >
 
     <Button
         android:id="@+id/dialogButtonOK"
-        android:layout_width="100px"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:text=" Ok "
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp" />
+
+        android:layout_marginRight="5dp"
+        android:layout_alignBottom="@+id/textOur"
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
+        android:textSize="30sp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView"
+        android:text="Czy na pewno chcesz to zrobić?!"
+        android:id="@+id/textOur"
         android:gravity="center"
-        android:layout_alignBottom="@+id/dialogButtonOK"
+
         android:layout_toRightOf="@+id/dialogButtonOK"
-        android:layout_toEndOf="@+id/dialogButtonOK"
-        android:layout_alignTop="@+id/dialogButtonOK" />
+
+     />
 
 </RelativeLayout>
