@@ -25,6 +25,8 @@ public class ListActivity extends AppCompatActivity {
 
         loadFakeUsers();
 
+        listView.setAdapter(new ListAdapter(this, userList));
+
 
     }
 
